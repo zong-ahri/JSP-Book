@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dto.Product"%>
 <jsp:useBean class="dao.ProductRepository" id="productDAO" scope="session"></jsp:useBean>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +30,7 @@
 				<h3><%= product.getPname() %></h3>
 				<p><%= product.getDescription() %>
 				<p><%= product.getUnitPrice() %>원
+				<p> <a href="./product.jsp?id=<%= product.getProductId() %>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;</a>
 			</div>
 			<% 
 				}

@@ -3,6 +3,6 @@
     <fullyQualifiedTypeName name="ch04.com.dao.Person"/>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="dao.ProductRepository"/>
-    <fullyQualifiedTypeName name="dto.Product"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="dto.Product"/>
 </qualifiedTypeNameHistroy>
