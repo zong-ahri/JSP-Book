@@ -11,3 +11,4 @@
 2023-12-16 07:27:46,459 [Framework stop - Equinox Container: f33f5690-d99f-4c38-b38f-473e612c249d] INFO  org.eclipse.jetty.server.Server - Stopped Server@4d4c8a4{STOPPING}[10.0.5,sto=0]
 2023-12-16 07:27:46,462 [Framework stop - Equinox Container: f33f5690-d99f-4c38-b38f-473e612c249d] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@497e0a82{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
 2023-12-16 07:27:46,496 [Framework stop - Equinox Container: f33f5690-d99f-4c38-b38f-473e612c249d] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@247413a7{/wse,null,STOPPED}
+2023-12-16 07:52:50,643 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
