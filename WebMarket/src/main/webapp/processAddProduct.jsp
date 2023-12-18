@@ -1,3 +1,6 @@
+<%@page import="java.util.Enumeration"%>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@page import="dto.Product"%>
 <%@page import="dao.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -6,14 +9,21 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	
-	String productId = request.getParameter("productId");
-	String name = request.getParameter("name");
-	String unitPrice = request.getParameter("unitPrice");
-	String description = request.getParameter("description");
-	String manufacturer = request.getParameter("manufacturer");
-	String category = request.getParameter("category");
-	String nuitsInStock = request.getParameter("nuitsInStock");
-	String condition = request.getParameter("condition");
+	String filename = "";
+	String realFolder = request.getServletContext().getRealPath("./resources/images");	//웹 애플리케이션상의 절대 경로
+	int maxSize = 5 * 1024 * 1024;	//최대 업로드될 파일의 크기 5MB
+	String encType = "utf-8";	//인코딩 유형
+
+	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+	
+	String productId = multi.getParameter("productId");
+	String name = multi.getParameter("name");
+	String unitPrice = multi.getParameter("unitPrice");
+	String description = multi.getParameter("description");
+	String manufacturer = multi.getParameter("manufacturer");
+	String category = multi.getParameter("category");
+	String nuitsInStock = multi.getParameter("nuitsInStock");
+	String condition = multi.getParameter("condition");
 	
 	Integer price;
 	
@@ -29,6 +39,10 @@
 	else
 		stock = Long.valueOf(nuitsInStock);
 	
+	Enumeration files = multi.getFileNames();
+	String fname = (String) files.nextElement();
+	String fileName = multi.getFilesystemName(fname);
+	
 	ProductRepository dao = ProductRepository.getInstance();
 	
 	Product newProduct = new Product();
@@ -40,6 +54,7 @@
 	newProduct.setCategory(category);
 	newProduct.setUnitsInstock(stock);
 	newProduct.setCondition(condition);
+	newProduct.setFilename(fileName);
 	
 	dao.addProduct(newProduct);
 	

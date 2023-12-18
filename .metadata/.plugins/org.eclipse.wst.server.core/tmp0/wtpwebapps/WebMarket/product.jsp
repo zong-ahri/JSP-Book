@@ -6,8 +6,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./resources/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>상품 상세 정보</title>
 </head>
@@ -24,9 +24,11 @@
 		Product product = dao.getProductById(id);
 	%>
 	<div class="container">
-		<div class="row">	
+		<div class="row">
+			<div class="col-md-5">
+				<img src="./resources/images/<%= product.getFilename() %>" style="width: 100%">
+			</div>	
 			<div class="col-md-6">
-				<%-- 
 				<h3><%= product.getPname() %></h3>
 				<p><%= product.getDescription() %>
 				<p> <b>상품 코드 : </b><span class="badge badge-danger"><%= product.getProductId() %></span>
@@ -34,7 +36,8 @@
 				<p> <b>분류</b> : <%= product.getCategory() %>
 				<p> <b>재고 수</b> : <%= product.getUnitsInstock() %>
 				<h4><%= product.getUnitPrice() %>원</h4>
-				 --%>
+
+				<%-- 
 				<h3><% out.println(product.getPname()); %></h3>
 				<p><% out.println(product.getDescription()); %>
 				<p> <b>상품 코드 : </b><span class="badge badge-danger"><%= product.getProductId() %></span>
@@ -42,6 +45,8 @@
 				<p> <b>분류</b> : <% out.println(product.getCategory()); %>
 				<p> <b>재고 수</b> : <% out.println(product.getUnitsInstock()); %>
 				<h4><% out.println(product.getUnitPrice()); %>원</h4>
+				 --%>
+				
 				<p> <a href="#" class="btn btn-info"> 상품 주문 &raquo;</a>
 				<p> <a href="./products.jsp" class="btn btn-secondary" role="button"> 상품 목록 &raquo;</a>
 			</div>
