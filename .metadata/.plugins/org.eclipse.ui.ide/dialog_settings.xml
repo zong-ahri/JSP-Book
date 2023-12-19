@@ -123,4 +123,6 @@
 		<item value="org.springframework.ide.eclipse.webflow.feature:3.9.17.202106211030-RELEASE"/>
 		<item value="org.springframework.ide.eclipse.xml.namespaces.feature:4.11.0.202106180608"/>
 	</list>
+	<section name="NewWizardAction">
+	</section>
 </section>
