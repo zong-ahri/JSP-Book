@@ -649,3 +649,9 @@
 0:0:0:0:0:0:0:1 - - [20/Dec/2023:23:46:33 +0900] "GET /WebMarket/welcome.jsp HTTP/1.1" 200 782
 0:0:0:0:0:0:0:1 - - [20/Dec/2023:23:46:44 +0900] "GET /JSPBook/ch10/security02.jsp HTTP/1.1" 200 363
 0:0:0:0:0:0:0:1 - - [20/Dec/2023:23:46:48 +0900] "GET /WebMarket/welcome.jsp HTTP/1.1" 200 782
+127.0.0.1 - - [20/Dec/2023:23:52:27 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [20/Dec/2023:23:52:28 +0900] "GET /WebMarket/addProduct.jsp HTTP/1.1" 200 1264
+127.0.0.1 - - [20/Dec/2023:23:52:28 +0900] "GET /WebMarket/resources/css/bootstrap.min.css HTTP/1.1" 200 144877
+127.0.0.1 - - [20/Dec/2023:23:52:36 +0900] "POST /WebMarket/j_security_check HTTP/1.1" 302 -
+127.0.0.1 - - [20/Dec/2023:23:52:36 +0900] "GET /WebMarket/login.jsp?error=1 HTTP/1.1" 200 1355
+127.0.0.1 - - [20/Dec/2023:23:52:36 +0900] "GET /WebMarket/resources/css/bootstrap.min.css HTTP/1.1" 304 -

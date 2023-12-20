@@ -1,5 +1,6 @@
 <%@page import="dao.ProductRepository"%>
 <%@page import="dto.Product"%>
+<%@page errorPage="exceptionNoProductId.jsp" %>
 <jsp:useBean class="dao.ProductRepository" id="productDAO" scope="session"></jsp:useBean>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
