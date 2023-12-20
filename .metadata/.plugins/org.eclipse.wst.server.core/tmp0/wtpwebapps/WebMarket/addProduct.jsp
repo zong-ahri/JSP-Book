@@ -20,8 +20,9 @@
 		</div>
 	</div>
 	<div class="container">
-		<div>
+		<div class="text-right">
 			<a href="?language=ko">Korean</a>|<a href="?language=en">English</a>
+			<a href="logout.jsp" class="btn btn-sm btn-success pull-right">logout</a>
 		</div>
 		<form action="./processAddProduct.jsp" name="newProduct" class="form-horizontal" method="post" enctype="multipart/form-data">
 			<div class="form-group row">	

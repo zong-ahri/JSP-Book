@@ -2,3 +2,8 @@
 1702854886486	Copy file
 1702985121776	Rename resource 'validation02_process03.jsp'
 1703014233704	Copy file
+1703028537002	Delete element
+1703075706392	Move 'web.xml' to 'ch10'
+1703075709631	Move 'web.xml' to 'WEB-INF'
+1703075767142	Rename resource 'security01.jsp'
+1703075833293	Rename resource 'scurity01.jsp'
