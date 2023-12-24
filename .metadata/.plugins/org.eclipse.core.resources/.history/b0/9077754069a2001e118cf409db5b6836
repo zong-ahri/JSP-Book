@@ -1,0 +1,11 @@
+show databases;
+
+use webmarketdb;
+
+show tables;
+
+desc product;
+
+select * from product;
+
+alter table product modify column p_name VARCHAR(20);

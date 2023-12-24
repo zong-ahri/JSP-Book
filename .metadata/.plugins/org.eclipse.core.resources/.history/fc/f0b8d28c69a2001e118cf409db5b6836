@@ -1,0 +1,13 @@
+show databases;
+
+use webmarketdb;
+
+show tables;
+
+desc product;
+
+select * from product;
+
+delete from product where p_id='P1237';
+
+alter table product modify column p_name VARCHAR(20);
