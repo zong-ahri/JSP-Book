@@ -1,11 +1,10 @@
-<%@page import="java.util.Enumeration"%>
-<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
-<%@page import="com.oreilly.servlet.MultipartRequest"%>
-<%@page import="dto.Product"%>
-<%@page import="dao.ProductRepository"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.*"%>
+<%@page import="com.oreilly.servlet.multipart.*"%>
+<%@page import="com.oreilly.servlet.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ include file="dbconn.jsp" %>
 <%
 	request.setCharacterEncoding("utf-8");
 	
@@ -22,7 +21,7 @@
 	String description = multi.getParameter("description");
 	String manufacturer = multi.getParameter("manufacturer");
 	String category = multi.getParameter("category");
-	String nuitsInStock = multi.getParameter("nuitsInStock");
+	String unitsInStock = multi.getParameter("unitsInStock");
 	String condition = multi.getParameter("condition");
 	
 	Integer price;
@@ -34,29 +33,34 @@
 	
 	long stock;
 	
-	if (nuitsInStock.isEmpty())
+	if (unitsInStock.isEmpty())
 		stock = 0;
 	else
-		stock = Long.valueOf(nuitsInStock);
+		stock = Long.valueOf(unitsInStock);
 	
 	Enumeration files = multi.getFileNames();
 	String fname = (String) files.nextElement();
 	String fileName = multi.getFilesystemName(fname);
 	
-	ProductRepository dao = ProductRepository.getInstance();
+	PreparedStatement pstmt = null;
 	
-	Product newProduct = new Product();
-	newProduct.setProductId(productId);
-	newProduct.setPname(name);
-	newProduct.setUnitPrice(price);
-	newProduct.setDescription(description);
-	newProduct.setManufacturer(manufacturer);
-	newProduct.setCategory(category);
-	newProduct.setUnitsInstock(stock);
-	newProduct.setCondition(condition);
-	newProduct.setFilename(fileName);
+	String sql = "insert into product values(?,?,?,?,?,?,?,?,?)";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setString(1, productId);
+	pstmt.setString(2, name);
+	pstmt.setInt(3, price);
+	pstmt.setString(4, description);
+	pstmt.setString(5, category);
+	pstmt.setString(6, manufacturer);
+	pstmt.setLong(7, stock);
+	pstmt.setString(8, condition);
+	pstmt.setString(9, fileName);
+	pstmt.executeUpdate();
 	
-	dao.addProduct(newProduct);
+	if (pstmt != null)
+		pstmt.close();
+	if (conn != null)
+		conn.close();
 	
 	response.sendRedirect("products.jsp");
 %>

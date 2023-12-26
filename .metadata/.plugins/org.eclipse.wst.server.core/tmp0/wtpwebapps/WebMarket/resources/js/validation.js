@@ -4,6 +4,7 @@
  
 function CheckAddProduct() {
 	
+	//var newProduct = document.getElementById("newProduct");
 	var productId = document.getElementById("productId");
 	var name = document.getElementById("name");
 	var unitPrice = document.getElementById("unitPrice");
@@ -58,5 +59,7 @@ function CheckAddProduct() {
 		return false;
 	}
 	
-	document.newProcuct.submit();
+	//newProduct.submit();
+	document.newProduct.submit();
+	
 }
