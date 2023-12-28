@@ -10,6 +10,7 @@ show tables;
 -- 테이블 상세조회
 desc product;
 desc member;
+desc board;
 
 -- 테이블 데이터 조회
 select * from product;
