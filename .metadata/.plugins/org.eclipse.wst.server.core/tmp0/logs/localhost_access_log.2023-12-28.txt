@@ -454,3 +454,8 @@
 127.0.0.1 - admin [28/Dec/2023:00:40:00 +0900] "GET /WebMarket/addProduct.jsp HTTP/1.1" 200 3973
 127.0.0.1 - admin [28/Dec/2023:00:40:00 +0900] "GET /WebMarket/resources/css/bootstrap.min.css HTTP/1.1" 304 -
 127.0.0.1 - admin [28/Dec/2023:00:40:00 +0900] "GET /WebMarket/resources/js/validation.js HTTP/1.1" 304 -
+127.0.0.1 - - [28/Dec/2023:14:27:22 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [28/Dec/2023:14:27:23 +0900] "GET /JSPBook/ch18/mvc_success.jsp HTTP/1.1" 500 168
+127.0.0.1 - - [28/Dec/2023:14:28:23 +0900] "GET /JSPBook/ch18/mvc.jsp HTTP/1.1" 200 311
+127.0.0.1 - - [28/Dec/2023:14:28:31 +0900] "GET /JSPBook/ch18/ControllerServlet?id=admin&passwd=1234 HTTP/1.1" 200 480
+127.0.0.1 - - [28/Dec/2023:14:29:28 +0900] "GET /JSPBook/ch18/ControllerServlet?id=admin&passwd=admin HTTP/1.1" 200 173
